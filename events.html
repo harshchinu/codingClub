@@ -37,42 +37,8 @@
         
         
        <div class="navigation">
-            <div class = "container">   
-            <nav class="navbar navbar-default" role="navigation">
-            <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            </button>
-            </div>
-        <div class="navbar-collapse collapse">
-        
-        <ul class="nav navbar-nav navbar-center navigation">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="team.html">Team</a></li>
-            
-            
-            <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-          </ul>
-        </li>    
-            
-            
-            
-
-            <li> <a href="#">Projects</a></li>
-            <li> <a href="#">Blog</a></li>
-        </ul>
-                
-                </div>
-</div>
-                </nav>  
+            <div class = "container header">
+            </div>  
         </div>
 <!--<nav class="navbar">
 <!--<nav class="navbar"-->	
@@ -82,8 +48,8 @@
         
          <!--2colum here-->
       <div class="container">
-				<div class="row text-center inner">
-					<div class="col-sm-4">
+				<div class="row text-center inner events">
+					<!-- <div class="col-sm-4">
 						<div class="two-column">
 							<img src="img/c.png">
 							<h2>Lorem Workshop </h2>
@@ -104,7 +70,7 @@
 								<h2>Code Fest</h2>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor eros eget eros maximus, ut cursus sem euismod. Donec iaculis tristique odio at consectetur. Nullam dignissim varius suscipit. Sed in leo sit amet velit finibus pretium.</p>
 								</div>
-							</div>
+							</div> -->
 						</div>
 					</div>
             <!--ends-->
@@ -113,25 +79,7 @@
         <!--footer-->
         
         <div class="container footer">
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div class="section-title">
-                            <h1> CONTACT US </h1><hr>
-                        </div>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor eros eget eros maximus, ut cursus sem euismod. Donec iaculis tristique odio at consectetur.</p>
-                    </div>
-                       
-                     <div class="col-sm-4">
-                        <h1> SCET coding club</h1><hr>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor eros eget eros maximus, ut cursus sem euismod. Donec iaculis tristique odio at consectetur.</p>
-                    </div>
-                    
-                     <div class="col-sm-4">
-                         <h1> SCET coding club</h1><hr>
-                         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14880.954060959806!2d72.8005107!3d21.1826819!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xbdd1676277c8bb1!2sSarvajanik+College+of+Engineering+%26+Technology!5e0!3m2!1sen!2sin!4v1551349341328" width="100%" height="200%" frameborder="0" style="border:0" allowfullscreen=""></iframe>
-                    </div>
-                    
-                    </div>
+                
                     </div>
         <!--footer-->
     
@@ -141,7 +89,23 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    
+<script src="./bootstrap/js/jquery.js"></script>
+<script>
+    $(document).ready(function(){
+      $.get("./header.html",function(data){
+        $('.header').append(data);
+      });
+      $.get("./footer.html",function(data){
+        $('.footer').append(data);
+      });
+      $.getJSON("./data/Events/data.json",function(data){
+        for(let i=0;i<data.length;i++){
+            let events = '<a target="_blank" href="./data/Events/docs/'+data[i]["content"]+'"><div class="col-sm-4"><div class="two-column"><img src="./data/Events/img/'+data[i]["img-url"]+'" style="width:100%;"><h2>'+data[i]["name"]+'</h2><p></p></div></div></a>';
+            $('.events').append(events);
+        }
+      });
+    });
+</script>
     </body>
 
 

@@ -38,43 +38,9 @@
         
         
        <div class="navigation">
-            <div class = "container">   
-            <nav class="navbar navbar-default" role="navigation">
-            <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            </button>
+            <div class = "container header">   
+              </div>
             </div>
-        <div class="navbar-collapse collapse">
-        
-        <ul class="nav navbar-nav navbar-center navigation">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="team.html">Team</a></li>
-            
-            
-            <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-          </ul>
-        </li>    
-            
-            
-            
-
-            <li> <a href="#">Projects</a></li>
-            <li> <a href="#">Blog</a></li>
-        </ul>
-                
-                </div>
-</div>
-                </nav>  
-        </div>
 <!--<nav class="navbar">
 
 <!--slider-->
@@ -84,21 +50,31 @@
                     <ol class="carousel-indicators">
                       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                       <li data-target="#myCarousel" data-slide-to="1"></li>
-                      <li data-tar  get="#myCarousel" data-slide-to="2"></li>
+                      <li data-target="#myCarousel" data-slide-to="2"></li>
+                      <li data-target="#myCarousel" data-slide-to="3"></li>
+                      <li data-tar  get="#myCarousel" data-slide-to="4"></li>
                     </ol>
 
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner">
                       <div class="item active">
-                        <img src="img/s1.jpg" alt="Los Angeles" style="width:100%;">
+                        <img src="img/s1.jpg" alt="" style="width:100%;" class = "img-responsive">
                       </div>
 
                       <div class="item">
-                        <img src="img/S2.jpg" alt="Chicago" style="width:100%;">
+                        <img src="img/s2.jpg" alt="" style="width:100%;" class = "img-responsive">
                       </div>
 
                       <div class="item">
-                        <img src="img/S3.jpg" alt="New york" style="width:100%;">
+                        <img src="img/s3.jpg" alt="" style="width:100%;" class = "img-responsive">
+                      </div>
+
+                      <div class="item item1">
+                        <img src="img/s4.jpg" alt="" style="width:100%;" class = "img-responsive">
+                      </div>
+
+                      <div class="item">
+                        <img src="img/s5.jpg" alt="" style="width:100%;" class = "img-responsive">
                       </div>
                     </div>
 
@@ -135,7 +111,7 @@
 						<div class="two-column">
 							<img src="img/c.png">
 							<h2>What is coding club </h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor eros eget eros maximus, ut cursus sem euismod. Donec iaculis tristique odio at consectetur. Nullam dignissim varius suscipit. Sed in leo sit amet velit finibus pretium.</p>>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor eros eget eros maximus, ut cursus sem euismod. Donec iaculis tristique odio at consectetur. Nullam dignissim varius suscipit. Sed in leo sit amet velit finibus pretium.</p>
 
 							</div>
 						</div>
@@ -159,25 +135,7 @@
         <!--footer-->
         
         <div class="container footer">
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div class="section-title">
-                            <h1> CONTACT US </h1><hr>
-                        </div>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor eros eget eros maximus, ut cursus sem euismod. Donec iaculis tristique odio at consectetur.</p>
-                    </div>
-                       
-                     <div class="col-sm-4">
-                        <h1> SCET coding club</h1><hr>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor eros eget eros maximus, ut cursus sem euismod. Donec iaculis tristique odio at consectetur.</p>
-                    </div>
-                    
-                     <div class="col-sm-4">
-                         <h1> SCET coding club</h1><hr>
-                         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14880.954060959806!2d72.8005107!3d21.1826819!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xbdd1676277c8bb1!2sSarvajanik+College+of+Engineering+%26+Technology!5e0!3m2!1sen!2sin!4v1551349341328" width="100%" height="200%" frameborder="0" style="border:0" allowfullscreen=""></iframe>
-                    </div>
-                    
-                    </div>
+                
                     </div>
         <!--footer-->
     
@@ -187,7 +145,17 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    
+<script src="./bootstrap/js/jquery.js"></script>
+<script>
+    $(document).ready(function(){
+      $.get("./header.html",function(data){
+        $('.header').append(data);
+      });
+      $.get("./footer.html",function(data){
+        $('.footer').append(data);
+      });
+    });
+</script>
     </body>
 
 
